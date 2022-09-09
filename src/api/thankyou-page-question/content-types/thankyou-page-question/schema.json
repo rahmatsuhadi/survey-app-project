@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "thankyou_page_questions",
+  "info": {
+    "singularName": "thankyou-page-question",
+    "pluralName": "thankyou-page-questions",
+    "displayName": "ThankyouPageQuestion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "media": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "button": {
+      "type": "boolean",
+      "default": false
+    },
+    "buttonLabel": {
+      "type": "string"
+    },
+    "buttonLink": {
+      "type": "string"
+    },
+    "actionText": {
+      "type": "string"
+    },
+    "pageRedirect": {
+      "type": "boolean"
+    }
+  }
+}

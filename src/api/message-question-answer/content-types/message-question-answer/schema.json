@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "message_question_answers",
+  "info": {
+    "singularName": "message-question-answer",
+    "pluralName": "message-question-answers",
+    "displayName": "MessageQuestionAnswer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "answer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::answer.answer",
+      "inversedBy": "message_question_answers"
+    },
+    "message_question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::message-question.message-question",
+      "inversedBy": "message_question_answers"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "yes_or_no_question_answers",
+  "info": {
+    "singularName": "yes-or-no-question-answer",
+    "pluralName": "yes-or-no-question-answers",
+    "displayName": "YesOrNoQuestionAnswer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "boolean",
+      "required": true
+    },
+    "yes_or_no_question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::yes-or-no-question.yes-or-no-question",
+      "inversedBy": "yes_or_no_question_answers"
+    },
+    "answer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::answer.answer",
+      "inversedBy": "yes_or_no_question_answers"
+    }
+  }
+}

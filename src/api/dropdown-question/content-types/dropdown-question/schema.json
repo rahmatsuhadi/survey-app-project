@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dropdown_questions",
+  "info": {
+    "singularName": "dropdown-question",
+    "pluralName": "dropdown-questions",
+    "displayName": "DropdownQuestion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "allowMultipleChoice": {
+      "type": "boolean",
+      "default": false
+    },
+    "allowOtherChoice": {
+      "type": "boolean"
+    },
+    "giveScore": {
+      "type": "boolean"
+    },
+    "choices": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::question-choice.question-choice",
+      "mappedBy": "dropdown_question"
+    },
+    "question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::question.question",
+      "inversedBy": "dropdown_questions"
+    },
+    "dropdown_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dropdown-question-answer.dropdown-question-answer",
+      "mappedBy": "dropdown_question"
+    }
+  }
+}

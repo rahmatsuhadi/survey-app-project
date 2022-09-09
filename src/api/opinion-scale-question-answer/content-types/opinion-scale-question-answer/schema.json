@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "opinion_scale_question_answers",
+  "info": {
+    "singularName": "opinion-scale-question-answer",
+    "pluralName": "opinion-scale-question-answers",
+    "displayName": "OpinionScaleQuestionAnswer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "integer"
+    },
+    "answer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::answer.answer",
+      "inversedBy": "opinion_scale_question_answers"
+    },
+    "opinion_scale_question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::opinion-scale-question.opinion-scale-question",
+      "inversedBy": "opinion_scale_question_answers"
+    }
+  }
+}

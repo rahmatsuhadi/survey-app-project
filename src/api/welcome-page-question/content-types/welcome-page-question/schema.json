@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "welcome_page_questions",
+  "info": {
+    "singularName": "welcome-page-question",
+    "pluralName": "welcome-page-questions",
+    "displayName": "WelcomePageQuestion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "buttonLabel": {
+      "type": "string",
+      "required": true
+    },
+    "media": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

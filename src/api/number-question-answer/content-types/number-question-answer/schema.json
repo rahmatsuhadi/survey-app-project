@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "number_question_answers",
+  "info": {
+    "singularName": "number-question-answer",
+    "pluralName": "number-question-answers",
+    "displayName": "NumberQuestionAnswer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "float"
+    },
+    "answer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::answer.answer",
+      "inversedBy": "number_question_answers"
+    },
+    "number_question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::number-question.number-question",
+      "inversedBy": "number_question_answers"
+    }
+  }
+}

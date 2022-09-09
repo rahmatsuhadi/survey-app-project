@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "email_question_answers",
+  "info": {
+    "singularName": "email-question-answer",
+    "pluralName": "email-question-answers",
+    "displayName": "EmailQuestionAnswer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "email"
+    },
+    "answer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::answer.answer",
+      "inversedBy": "email_question_answers"
+    },
+    "email_question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::email-question.email-question",
+      "inversedBy": "email_question_answers"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "message_questions",
+  "info": {
+    "singularName": "message-question",
+    "pluralName": "message-questions",
+    "displayName": "MessageQuestion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::question.question",
+      "mappedBy": "message_question"
+    },
+    "message_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::message-question-answer.message-question-answer",
+      "mappedBy": "message_question"
+    }
+  }
+}

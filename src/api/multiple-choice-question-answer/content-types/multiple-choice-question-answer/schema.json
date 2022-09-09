@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "multiple_choice_question_answers",
+  "info": {
+    "singularName": "multiple-choice-question-answer",
+    "pluralName": "multiple-choice-question-answers",
+    "displayName": "MultipleChoiceQuestionAnswer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "answer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::answer.answer",
+      "inversedBy": "multiple_choice_question_answers"
+    },
+    "multiple_choice_question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::multiple-choice-question.multiple-choice-question",
+      "inversedBy": "multiple_choice_question_answers"
+    }
+  }
+}

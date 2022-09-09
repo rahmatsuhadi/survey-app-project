@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "multiple_choice_questions",
+  "info": {
+    "singularName": "multiple-choice-question",
+    "pluralName": "multiple-choice-questions",
+    "displayName": "MultipleChoiceQuestion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "randomize": {
+      "type": "boolean"
+    },
+    "stacked": {
+      "type": "boolean"
+    },
+    "allowOtherChoice": {
+      "type": "boolean"
+    },
+    "otherChoice": {
+      "type": "string"
+    },
+    "noneAbove": {
+      "type": "boolean"
+    },
+    "giveScore": {
+      "type": "boolean"
+    },
+    "allowMultipleChoice": {
+      "type": "boolean"
+    },
+    "question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::question.question",
+      "inversedBy": "multiple_choice_questions"
+    },
+    "choices": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::question-choice.question-choice",
+      "mappedBy": "multiple_choice_question"
+    },
+    "multiple_choice_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::multiple-choice-question-answer.multiple-choice-question-answer",
+      "mappedBy": "multiple_choice_question"
+    }
+  }
+}

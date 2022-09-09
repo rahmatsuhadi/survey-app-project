@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "phone_number_questions",
+  "info": {
+    "singularName": "phone-number-question",
+    "pluralName": "phone-number-questions",
+    "displayName": "PhoneNumberQuestion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::question.question",
+      "inversedBy": "phone_number_questions"
+    }
+  }
+}

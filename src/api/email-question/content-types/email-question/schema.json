@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "email_questions",
+  "info": {
+    "singularName": "email-question",
+    "pluralName": "email-questions",
+    "displayName": "EmailQuestion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::question.question",
+      "inversedBy": "email_questions"
+    },
+    "email_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::email-question-answer.email-question-answer",
+      "mappedBy": "email_question"
+    }
+  }
+}

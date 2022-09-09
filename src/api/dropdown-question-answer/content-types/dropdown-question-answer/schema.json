@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dropdown_question_answers",
+  "info": {
+    "singularName": "dropdown-question-answer",
+    "pluralName": "dropdown-question-answers",
+    "displayName": "DropdownQuestionAnswer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "choices": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::question-choice.question-choice",
+      "mappedBy": "dropdown_question_answer"
+    },
+    "dropdown_question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::dropdown-question.dropdown-question",
+      "inversedBy": "dropdown_question_answers"
+    },
+    "answer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::answer.answer",
+      "inversedBy": "dropdown_question_answers"
+    }
+  }
+}

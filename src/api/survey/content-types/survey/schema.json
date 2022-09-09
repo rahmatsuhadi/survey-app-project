@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "surveys",
+  "info": {
+    "singularName": "survey",
+    "pluralName": "surveys",
+    "displayName": "Survey",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "surveyType": {
+      "type": "enumeration",
+      "enum": [
+        "CLASSIC"
+      ],
+      "default": "CLASSIC",
+      "required": false
+    },
+    "surveyStatus": {
+      "type": "enumeration",
+      "enum": [
+        "ACTIVE",
+        "DEACTIVE"
+      ],
+      "default": "ACTIVE",
+      "required": true
+    },
+    "totalQuestion": {
+      "type": "integer"
+    },
+    "totalResponse": {
+      "type": "integer"
+    },
+    "completionRate": {
+      "type": "float"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "surveys"
+    },
+    "questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::question.question",
+      "mappedBy": "survey"
+    },
+    "answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::answer.answer",
+      "mappedBy": "survey"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "workspace": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::workspace.workspace",
+      "inversedBy": "surveys"
+    }
+  }
+}

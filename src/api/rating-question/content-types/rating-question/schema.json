@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rating_questions",
+  "info": {
+    "singularName": "rating-question",
+    "pluralName": "rating-questions",
+    "displayName": "RatingQuestion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "step": {
+      "type": "integer",
+      "min": 0
+    },
+    "question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::question.question",
+      "inversedBy": "rating_questions"
+    },
+    "rating_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rating-question-answer.rating-question-answer",
+      "mappedBy": "rating_question"
+    }
+  }
+}

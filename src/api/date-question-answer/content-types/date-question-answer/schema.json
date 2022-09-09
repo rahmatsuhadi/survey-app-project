@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "date_question_answers",
+  "info": {
+    "singularName": "date-question-answer",
+    "pluralName": "date-question-answers",
+    "displayName": "DateQuestionAnswer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "datetime"
+    },
+    "answer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::answer.answer",
+      "inversedBy": "date_question_answers"
+    },
+    "date_question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::date-question.date-question",
+      "inversedBy": "date_question_answers"
+    }
+  }
+}

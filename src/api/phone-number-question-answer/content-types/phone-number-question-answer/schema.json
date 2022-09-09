@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "phone_number_question_answers",
+  "info": {
+    "singularName": "phone-number-question-answer",
+    "pluralName": "phone-number-question-answers",
+    "displayName": "PhoneNumberQuestionAnswer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::answer.answer",
+      "inversedBy": "phone_number_question_answers"
+    },
+    "question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::question.question",
+      "inversedBy": "phone_number_question_answers"
+    }
+  }
+}

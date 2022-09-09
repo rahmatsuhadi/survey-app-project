@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agreement_questions",
+  "info": {
+    "singularName": "agreement-question",
+    "pluralName": "agreement-questions",
+    "displayName": "AgreementQuestion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "showCondition": {
+      "type": "boolean"
+    },
+    "question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::question.question",
+      "inversedBy": "agreement_questions"
+    },
+    "agreement_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::agreement-question-answer.agreement-question-answer",
+      "mappedBy": "agreement_question"
+    }
+  }
+}

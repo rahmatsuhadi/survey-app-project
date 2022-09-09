@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rating_question_answers",
+  "info": {
+    "singularName": "rating-question-answer",
+    "pluralName": "rating-question-answers",
+    "displayName": "RatingQuestionAnswer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "rating": {
+      "type": "integer",
+      "min": 0
+    },
+    "answer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::answer.answer",
+      "inversedBy": "rating_question_answers"
+    },
+    "rating_question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::rating-question.rating-question",
+      "inversedBy": "rating_question_answers"
+    }
+  }
+}

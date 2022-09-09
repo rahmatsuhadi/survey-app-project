@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "text_question_answers",
+  "info": {
+    "singularName": "text-question-answer",
+    "pluralName": "text-question-answers",
+    "displayName": "TextQuestionAnswer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text_question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::text-question.text-question",
+      "inversedBy": "text_question_answers"
+    },
+    "value": {
+      "type": "text"
+    },
+    "answer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::answer.answer",
+      "inversedBy": "text_question_answers"
+    }
+  }
+}

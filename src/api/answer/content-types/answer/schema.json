@@ -1,0 +1,105 @@
+{
+  "kind": "collectionType",
+  "collectionName": "answers",
+  "info": {
+    "singularName": "answer",
+    "pluralName": "answers",
+    "displayName": "Answer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "survey": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::survey.survey",
+      "inversedBy": "answers"
+    },
+    "question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::question.question",
+      "inversedBy": "answers"
+    },
+    "text_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::text-question-answer.text-question-answer",
+      "mappedBy": "answer"
+    },
+    "yes_or_no_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::yes-or-no-question-answer.yes-or-no-question-answer",
+      "mappedBy": "answer"
+    },
+    "slider_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slider-question-answer.slider-question-answer",
+      "mappedBy": "answer"
+    },
+    "rating_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rating-question-answer.rating-question-answer",
+      "mappedBy": "answer"
+    },
+    "phone_number_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::phone-number-question-answer.phone-number-question-answer",
+      "mappedBy": "answer"
+    },
+    "number_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::number-question-answer.number-question-answer",
+      "mappedBy": "answer"
+    },
+    "email_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::email-question-answer.email-question-answer",
+      "mappedBy": "answer"
+    },
+    "date_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::date-question-answer.date-question-answer",
+      "mappedBy": "answer"
+    },
+    "agreement_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::agreement-question-answer.agreement-question-answer",
+      "mappedBy": "answer"
+    },
+    "multiple_choice_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::multiple-choice-question-answer.multiple-choice-question-answer",
+      "mappedBy": "answer"
+    },
+    "message_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::message-question-answer.message-question-answer",
+      "mappedBy": "answer"
+    },
+    "opinion_scale_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::opinion-scale-question-answer.opinion-scale-question-answer",
+      "mappedBy": "answer"
+    },
+    "dropdown_question_answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dropdown-question-answer.dropdown-question-answer",
+      "mappedBy": "answer"
+    }
+  }
+}
